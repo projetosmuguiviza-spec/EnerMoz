@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnerMoz | Recuperar senha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body" data-page="recover">
+  <main class="auth-layout">
+    <section class="auth-panel">
+      <a class="auth-brand" href="entrar.html" aria-label="EnerMoz">
+        <span class="brand-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/702/702814.png" alt="">
+        </span>
+        <span>
+          <strong>EnerMoz</strong>
+          <small>Gestão de energia residencial</small>
+        </span>
+      </a>
+
+      <form id="recoverForm" class="auth-form active">
+        <div class="auth-heading">
+          <span class="small-label">Recuperação</span>
+          <h1>Recuperar senha</h1>
+          <p>Confirme o email da conta e crie uma nova palavra-passe.</p>
+        </div>
+
+        <label>Email
+          <span class="input-with-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="">
+            <input id="recoverEmail" type="email" autocomplete="email" required>
+          </span>
+        </label>
+        <label>Nova palavra-passe
+          <span class="input-with-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/565/565547.png" alt="">
+            <input id="recoverPassword" type="password" minlength="4" autocomplete="new-password" required>
+          </span>
+        </label>
+
+        <button class="primary auth-submit" type="submit">Actualizar senha</button>
+        <p class="auth-switch">Lembrou a senha? <a href="entrar.html">Entrar</a></p>
+      </form>
+
+      <div id="authMessage" class="auth-message" aria-live="polite"></div>
+    </section>
+
+    <aside class="auth-photo">
+      <img src="../web/images/fotoLogin.jpg" alt="Residencia familiar">
+      <div>
+        <span>EnerMoz</span>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

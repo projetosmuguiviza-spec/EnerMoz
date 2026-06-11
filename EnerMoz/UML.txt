@@ -1,0 +1,164 @@
+ENERMOZ - UML TEXTUAL
+=====================
+
+Packages
+--------
+main
+  Main
+
+view
+  MenuConsole
+
+controller
+  EnerMozController
+
+model.dispositivos
+  Dispositivo
+
+model.energia
+  EntidadeEnergetica
+  Consumivel
+  Monitoravel
+  Classificavel
+  CategoriaEnergetica
+  HistoricoConsumo
+
+model.utilizador
+  Utilizador
+
+services
+  FacturaService
+  DashboardService
+  ScoreEnergeticoService
+  RelatorioService
+  AlertaService
+  SugestaoService
+  RankingService
+  SimuladorService
+
+repositories
+  DispositivoRepository
+  HistoricoRepository
+
+utils
+  PotenciaEstimator
+  TextUtils
+
+exceptions
+  EnerMozException
+  DadosInvalidosException
+
+
+Interfaces
+----------
+Consumivel
+  + calcularConsumoDiario(): double
+  + calcularConsumoMensal(): double
+
+Monitoravel
+  + gerarEstadoConsumo(): String
+  + emitirAlerta(): String
+  + gerarSugestao(): String
+
+Classificavel
+  + classificarEficiencia(): String
+
+
+Classes e Relacoes
+------------------
+EntidadeEnergetica implements Consumivel, Monitoravel, Classificavel
+  - id: String
+  + getId(): String
+  + gerarResumo(): String
+
+Dispositivo extends EntidadeEnergetica
+  - nome: String
+  - categoria: CategoriaEnergetica
+  - horasUsoDiario: double
+  - quantidade: int
+  - potenciaWatts: double
+  - fabricante: String
+  - modelo: String
+  - localizacao: String
+  - observacoes: String
+  - eficienciaEnergetica: String
+  + calcularConsumoDiario(): double
+  + calcularConsumoMensal(): double
+  + gerarEstadoConsumo(): String
+  + emitirAlerta(): String
+  + gerarSugestao(): String
+  + classificarEficiencia(): String
+  + gerarResumo(): String
+
+CategoriaEnergetica enum
+  ELETRONICO, ELETRODOMESTICO, ILUMINACAO, CLIMATIZACAO, INFORMATICA,
+  COMUNICACAO, ENTRETENIMENTO, ENERGIA_SOLAR, BOMBEAMENTO, OUTRO
+  - descricao: String
+  - potenciaMediaWatts: double
+  + porOpcao(opcao: int): CategoriaEnergetica
+  + porNome(nome: String): CategoriaEnergetica
+
+Utilizador
+  - nome: String
+  - dispositivos: ArrayList<Dispositivo>
+  - historico: ArrayList<HistoricoConsumo>
+  + adicionarDispositivo(dispositivo: Dispositivo): void
+  + removerDispositivo(indice: int): void
+  + obterDispositivo(indice: int): Dispositivo
+  + calcularConsumoTotalMensal(): double
+  + adicionarHistorico(registo: HistoricoConsumo): void
+
+HistoricoConsumo
+  - data: LocalDate
+  - consumoKwh: double
+  - facturaMt: double
+
+EnerMozController
+  - utilizador: Utilizador
+  - repositories: DispositivoRepository, HistoricoRepository
+  - services: FacturaService, DashboardService, RelatorioService, AlertaService,
+              SugestaoService, RankingService, SimuladorService
+  + criarDispositivo(...): Dispositivo
+  + editarDispositivo(...): void
+  + removerDispositivo(indice: int): void
+  + gerarDashboard(): String
+  + gerarRelatorio(): String
+  + gerarAlertas(): ArrayList<String>
+  + gerarSugestoes(): ArrayList<String>
+  + gerarRanking(): ArrayList<Dispositivo>
+  + simularPoupanca(percentagem: double): String
+
+DispositivoRepository
+  + carregar(): ArrayList<Dispositivo>
+  + guardarTodos(dispositivos: ArrayList<Dispositivo>): void
+
+HistoricoRepository
+  + carregar(): ArrayList<HistoricoConsumo>
+  + guardarTodos(historico: ArrayList<HistoricoConsumo>): void
+
+
+Principais associacoes
+----------------------
+MenuConsole --> EnerMozController
+EnerMozController --> Utilizador
+EnerMozController --> Services
+EnerMozController --> Repositories
+Utilizador o-- ArrayList<Dispositivo>
+Utilizador o-- ArrayList<HistoricoConsumo>
+Dispositivo --> CategoriaEnergetica
+Dispositivo --> PotenciaEstimator
+Repositories --> src/data/*.txt
+
+
+Conceitos de POO demonstrados
+-----------------------------
+Encapsulamento: atributos privados e acesso por getters/setters com validacao.
+Heranca: Dispositivo herda de EntidadeEnergetica.
+Polimorfismo: Dispositivo e tratado pelas interfaces Consumivel, Monitoravel e Classificavel.
+Abstraccao: EntidadeEnergetica define contrato comum para entidades energeticas.
+Interfaces: Consumivel, Monitoravel e Classificavel.
+Classe abstracta: EntidadeEnergetica.
+Sobrescrita: Dispositivo sobrescreve calculos, alertas, sugestoes e resumo.
+Composicao/agregacao: Utilizador agrega ArrayList de Dispositivo e HistoricoConsumo.
+Excepcoes: DadosInvalidosException e EnerMozException.
+Coleccoes: ArrayList em utilizador, ranking, alertas e sugestoes.

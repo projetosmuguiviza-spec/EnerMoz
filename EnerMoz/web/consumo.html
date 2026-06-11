@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnerMoz | Consumo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-page="consumption">
+  <aside class="sidebar"></aside>
+  <main class="page-shell">
+    <header class="page-top"></header>
+
+    <section class="two-column">
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Consumo semanal</h2>
+          <span>Em kWh</span>
+        </div>
+        <canvas id="weeklyChart"></canvas>
+        <div id="weeklyFallback" class="chart-fallback"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Consumo por categoria</h2>
+        </div>
+        <canvas id="categoryChart"></canvas>
+        <div id="categoryFallback" class="chart-fallback"></div>
+      </article>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

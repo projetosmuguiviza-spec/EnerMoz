@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnerMoz | Entrar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body" data-page="login">
+  <main class="auth-layout">
+    <section class="auth-panel">
+      <a class="auth-brand" href="entrar.html" aria-label="EnerMoz">
+        <span class="brand-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/702/702814.png" alt="">
+        </span>
+        <span>
+          <strong>EnerMoz</strong>
+          <small>Gestão de energia residencial</small>
+        </span>
+      </a>
+
+      <form id="signinForm" class="auth-form active">
+        <div class="auth-heading">
+          <span class="small-label">Acesso</span>
+          <h1>Entrar na sua conta</h1>
+          <p>Veja o consumo, a factura e poupança com os dados da sua residencia.</p>
+        </div>
+
+        <label>Email
+          <span class="input-with-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="">
+            <input id="signinEmail" type="email" autocomplete="email" required>
+          </span>
+        </label>
+        <label>Palavra-passe
+          <span class="input-with-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/565/565547.png" alt="">
+            <input id="signinPassword" type="password" autocomplete="current-password" required>
+          </span>
+        </label>
+
+        <button class="primary auth-submit" type="submit">Entrar</button>
+        <div class="auth-links">
+          <a href="recuperar-senha.html">Recuperar senha</a>
+          <a href="criar-conta.html">Criar conta</a>
+        </div>
+      </form>
+
+      <div id="authMessage" class="auth-message" aria-live="polite"></div>
+
+    </section>
+
+    <aside class="auth-photo">
+      <img src="../web/images/fotoLogin.jpg" alt="Residencia familiar">
+      <div>
+        <span>EnerMoz</span>
+        <strong>Melhor forma de gerir o seu dinheiro gasto energia na sua casa.</strong>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

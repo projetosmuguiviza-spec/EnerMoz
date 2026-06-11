@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnerMoz | Aparelhos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="devices">
+  <aside class="sidebar"></aside>
+  <main class="page-shell">
+    <header class="page-top"></header>
+
+    <section class="two-column align-start">
+      <form class="panel form-panel" id="deviceForm">
+        <div class="panel-head">
+          <h2 id="formTitle">Adicionar aparelho</h2>
+          <button class="soft-button" type="button" id="resetForm">Limpar</button>
+        </div>
+        <input type="hidden" id="deviceIndex">
+        <label>Nome
+          <input id="name" required placeholder="Ex: TV">
+        </label>
+        <label>Categoria
+          <select id="category"></select>
+        </label>
+        <div class="field-row">
+          <label>Horas/dia
+            <input id="hours" type="number" min="0" max="24" step="0.5" required>
+          </label>
+          <label>Potência W
+            <input id="power" type="number" min="0" step="1" placeholder="0 estima">
+          </label>
+        </div>
+        <label>Localização
+          <input id="location" placeholder="Sala, cozinha, quarto">
+        </label>
+        <label>Observações
+          <textarea id="notes" rows="3"></textarea>
+        </label>
+        <button class="primary" type="submit">Guardar aparelho</button>
+      </form>
+
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Aparelhos registados</h2>
+          <button class="danger-button" type="button" id="clearAll">Remover tudo</button>
+        </div>
+        <div id="deviceList" class="device-list"></div>
+      </article>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

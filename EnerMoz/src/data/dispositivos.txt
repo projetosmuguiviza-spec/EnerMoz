@@ -1,0 +1,1 @@
+tv;Eletrónico;120.0;5.0;2;sala

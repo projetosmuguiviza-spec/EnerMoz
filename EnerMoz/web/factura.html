@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnerMoz | Factura EDM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="bill">
+  <aside class="sidebar"></aside>
+  <main class="page-shell">
+    <header class="page-top"></header>
+
+    <section class="two-column align-start">
+      <article class="panel bill-panel">
+        <span class="small-label">Factura EDM</span>
+        <h2>Estimativa deste mês</h2>
+        <div id="billRows" class="rows"></div>
+      </article>
+
+      <article class="panel">
+        <h2>Escalão/Tarifa usada</h2>
+        <p class="muted">O valor é uma estimativa baseada em tarifa doméstica, consumo mensal e taxa fixa.</p>
+        <div class="rows compact-rows">
+          <div><span>0-300 kWh</span><strong>6.00 MT/kWh</strong></div>
+          <div><span>301-500 kWh</span><strong>8.49 MT/kWh</strong></div>
+          <div><span>Acima de 500 kWh</span><strong>8.91 MT/kWh</strong></div>
+          <div><span>Taxa fixa</span><strong>233.37 MT</strong></div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

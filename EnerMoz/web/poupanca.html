@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnerMoz | Poupança</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="saving">
+  <aside class="sidebar"></aside>
+  <main class="page-shell">
+    <header class="page-top"></header>
+    <section class="two-column align-start">
+      <article class="panel">
+        <h2>Simular redução de uso</h2>
+        <label class="range-label">Reduzir por dia <span id="savingHoursLabel">2h</span>
+          <input id="savingHours" type="range" min="1" max="6" value="2">
+        </label>
+        <div id="savingSummary" class="rows"></div>
+      </article>
+      <article class="panel">
+        <h2>Onde poupar primeiro</h2>
+        <div id="savingList" class="saving-list"></div>
+      </article>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

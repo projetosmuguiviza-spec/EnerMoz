@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnerMoz | Início</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-page="home">
+  <aside class="sidebar"></aside>
+  <main class="page-shell">
+    <header class="page-top"></header>
+
+    <section class="home-hero">
+      <div>
+        <span class="small-label">Painel de Energia</span>
+        <h1>Monitorize o consumo da sua casa sem complicar.</h1>
+      </div>
+      <img src="../web/images/fotoHome.jpg" alt="Linhas eléctricas ao pôr do sol">
+    </section>
+
+    <section class="summary-grid">
+      <article>
+        <span>Aparelhos</span>
+        <strong id="homeDevices">0</strong>
+      </article>
+      <article>
+        <span>Consumo mensal</span>
+        <strong id="homeConsumption">0 kWh</strong>
+      </article>
+      <article>
+        <span>Factura estimada</span>
+        <strong id="homeBill">0 MT</strong>
+      </article>
+      <article>
+        <span>Maior consumidor</span>
+        <strong id="homeTopDevice">Sem dados</strong>
+      </article>
+    </section>
+
+    <section class="two-column">
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Evolução do consumo</h2>
+          <span>kWh/semana</span>
+        </div>
+        <canvas id="homeChart"></canvas>
+        <div id="homeFallback" class="chart-fallback"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Top Consumidores</h2>
+        </div>
+        <div id="homeRanking" class="ranking-list"></div>
+      </article>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
